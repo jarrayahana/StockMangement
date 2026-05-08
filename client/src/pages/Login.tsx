@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { heroSectionData } from '../assets/assets'
+import { heroSectionData } from '../../public/assets/assets'
 import { Link } from 'react-router-dom'
 import { BikeIcon, Loader2Icon, LockIcon, MailIcon, UserIcon } from 'lucide-react'
 
@@ -19,8 +19,11 @@ setTimeout(()=>window.location.href="/",1000)
     <div className="min-h-screen flex">
         {/* Left Side */}
         <div className="hidden lg-flex lg:w-1/2 
-        bg-app-green relative items-center justify-center">
-<img src={heroSectionData.hero_image} alt=""
+        bg-app-green relative items-center
+        bg-[url('../../public/assets/hero_bg.jpeg')]" >
+        
+         
+<img src={heroSectionData.hero_image} alt="HELLO WORLD"
 className="absolute inset-0 object-cover h-full 
 bg-center opacity-10"/>
         </div>
@@ -33,8 +36,10 @@ bg-center opacity-10"/>
                 Fresh and organic products delivered to your shops</p>
         </div>
         {/* RIght Side */}
+
         <div className="flex-1 flex-center 
         px-4 py-12 bg-app-cream">
+            
             <div className="w-full max-w-md">
                 {/* form header message */}
                 <div className="text-center mb-8">
