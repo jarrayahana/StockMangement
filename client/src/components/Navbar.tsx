@@ -1,6 +1,7 @@
 import { ArrowUpRightIcon, ChevronDownIcon, LogOutIcon, MapPinIcon, MenuIcon, PackageIcon, SearchIcon, ShieldIcon, ShoppingCartIcon, TruckIcon, UserIcon, XIcon } from 'lucide-react'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 const Navbar = () => {
     const user:any={
@@ -8,13 +9,21 @@ const Navbar = () => {
         email:"john@gmail.com",
         isAdmin: true
     }
-    const {cartCount,setIsCartOpen}={
-        cartCount:5,
-        setIsCartOpen:(_data:any)=>{}
-    }
+    const {cartCount,setIsCartOpen}=useCart()
     const [searchQuery,setSearchQuery]=useState("")
     const [userMenuOpen,setUserMenuOpen]=useState(false)
     const navigate=useNavigate()
+    const handleSearch=(e: React.SubmitEvent)=>{
+        e.preventDefault()
+        if(searchQuery.trim()){
+            navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
+            setSearchQuery("")
+        }
+    }
+    const handleLogout=()=>{
+        setUserMenuOpen(false)
+        navigate("/")
+    }
   return (
     <nav className="bg-white sticky top-0 z-50 border-b
     border-app-border">
@@ -35,7 +44,7 @@ const Navbar = () => {
                     <Link to='/deals' className="text-app-orange">Deals</Link>
                 </div>
                 {/* Search */}
-                <form className="hidden sm:flex flex-1 max-s-sm 
+                <form onSubmit={handleSearch} className="hidden sm:flex flex-1 max-s-sm 
                 text-xs sm:text-sm">
                     <div className="relative w-full">
                         <SearchIcon className="absolute left-2.5
@@ -133,7 +142,7 @@ const Navbar = () => {
                                         </Link>)}
 
                                         {user && <div className="border-t norder-app-border pt-1">
-                                                    <button className="flex items-center gap-3 px-4 py-2.5
+                                                    <button onClick={handleLogout} className="flex items-center gap-3 px-4 py-2.5
                                                     text-sm text-app-error hover:bg-red-50 w-full transition-colors">
                                                         <LogOutIcon size={16}/>Logout
                                                     </button>

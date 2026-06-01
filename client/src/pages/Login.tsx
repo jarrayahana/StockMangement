@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { heroSectionData } from '../../public/assets/assets'
+import { heroSectionData } from '../assets/assets'
 import { Link } from 'react-router-dom'
 import { BikeIcon, Loader2Icon, LockIcon, MailIcon, UserIcon } from 'lucide-react'
 
@@ -19,8 +19,7 @@ setTimeout(()=>window.location.href="/",1000)
     <div className="min-h-screen flex">
         {/* Left Side */}
         <div className="hidden lg-flex lg:w-1/2 
-        bg-app-green relative items-center
-        bg-[url('../../public/assets/hero_bg.jpeg')]" >
+        bg-app-green relative items-center" >
         
          
 <img src={heroSectionData.hero_image} alt="HELLO WORLD"
