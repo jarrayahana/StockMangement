@@ -18,23 +18,15 @@ setTimeout(()=>window.location.href="/",1000)
   }
     return (
     <div className="min-h-screen flex">
-        {/* Left Side */}
-        <div className="hidden lg-flex lg:w-1/2 
-        bg-app-green relative items-center" >
-        
-         
-<img src={heroSectionData.hero_image} alt="HELLO WORLD"
-className="absolute inset-0 object-cover h-full 
-bg-center opacity-10"/>
-        </div>
-        <div className="relative text-center px-12">
-            <h2 className="text-4xl font-semibold 
-            text-white mb-4">
-                Welcome to Super Stock</h2>
-            <p className="text-white/60 font-serif 
-            text-xl max-w-sm mx-auto">
-                Fresh and organic products delivered to your shops</p>
-        </div>
+                {/* Left Side */}
+                <div className="hidden lg:flex lg:w-1/2 bg-app-green relative items-center justify-center">
+                    <img src={heroSectionData.hero_image} alt="" className="absolute inset-0 object-cover h-full bg-center opacity-10" />
+                    <div className="relative text-center px-12">
+                        <h2 className="text-4xl font-semibold text-white mb-4">Welcome to Super Stok</h2>
+                        <p className="text-white/60 font-serif text-xl max-w-sm mx-auto">Fresh and Organic products delivered to your shops.</p>
+                    </div>
+                </div>
+                
         {/* RIght Side */}
 
         <div className="flex-1 flex-center 
