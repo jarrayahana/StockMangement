@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { heroSectionData } from '../assets/assets'
+
 import { Link } from 'react-router-dom'
 import { BikeIcon, Loader2Icon, LockIcon, MailIcon, UserIcon } from 'lucide-react'
+import { heroSectionData } from '../assets/assets'
 
 const Login = () => {
     const [isLoginState,setIsLoginState]=useState(true)
